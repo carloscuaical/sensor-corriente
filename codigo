@@ -1,0 +1,605 @@
+[
+    {
+        "id": "6ba2b50958515754",
+        "type": "tab",
+        "label": "Flujo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "036d4af53f5d12d0",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "259c4b60fec55efd",
+        "type": "sqlitedb",
+        "db": "/home/sensor/sensor.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "ac1c167b34f682f5",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bfa20321ecc2958c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "029d84d024093d53",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "ac1c167b34f682f5",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fa53eaee84f9bd32",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "ac1c167b34f682f5",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4341a5e2b31cdf9a",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "ac1c167b34f682f5",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "941349cd81ec69e5",
+        "type": "ui_group",
+        "name": "Group 4",
+        "tab": "ac1c167b34f682f5",
+        "order": 4,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9ffdf6d760c47750",
+        "type": "serial in",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "serial": "036d4af53f5d12d0",
+        "x": 70,
+        "y": 240,
+        "wires": [
+            [
+                "bee128b5f48f1950"
+            ]
+        ]
+    },
+    {
+        "id": "93c3401723b3770c",
+        "type": "function",
+        "z": "6ba2b50958515754",
+        "name": "function 1",
+        "func": "var b= JSON.parse(JSON.stringify(msg.payload));\nb=msg\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "418059eb86f3b15d",
+                "a17175264c9c0c62",
+                "f61050973a572728",
+                "725b5873c3f27a5f"
+            ]
+        ]
+    },
+    {
+        "id": "bee128b5f48f1950",
+        "type": "json",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 230,
+        "y": 240,
+        "wires": [
+            [
+                "93c3401723b3770c"
+            ]
+        ]
+    },
+    {
+        "id": "418059eb86f3b15d",
+        "type": "function",
+        "z": "6ba2b50958515754",
+        "name": "almacenar datos",
+        "func": "var Corriente=msg.payload.corriente;\nvar Voltaje=msg.payload.voltaje;\nvar sensor1 = flow.get('cont') || 0;\nif (sensor1 % 2 == 0) {\nvar msg1={\"topic\":\"INSERT INTO sensor(id,Corriente,Voltaje) VALUES (NULL,\"+\"\\'\"+Corriente +\"\\'\" +\", \"+\"\\'\"+Voltaje+\"\\'\" + \")\"};\n\nreturn msg1;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 280,
+        "wires": [
+            [
+                "5d0bc9ab7d6eb6d8",
+                "f5704fc75bdbe3fa"
+            ]
+        ]
+    },
+    {
+        "id": "751a391f62cb93f6",
+        "type": "function",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "func": "var topic=\"select id,date(Fecha),time(Fecha),Corriente,Voltaje FROM sensor;\";\n//var topic = \"SELECT * FROM sensor\";\nvar cont=flow.get('cont')||0;\nflow.set('cont',1);\nvar msg1={};\nmsg1.topic=topic;\nreturn msg1;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "aa57aa5ea5c8d9b8"
+            ]
+        ]
+    },
+    {
+        "id": "32d7819cb8a2955e",
+        "type": "function",
+        "z": "6ba2b50958515754",
+        "name": "borrar datos",
+        "func": "var topic=\"DELETE FROM sensor WHERE id>=0\";\n\nvar cont=flow.get('cont')||0;\nflow.set('cont',1);\n\nvar msg2={};\nmsg2.topic=topic;\nreturn msg2;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "f5704fc75bdbe3fa"
+            ]
+        ]
+    },
+    {
+        "id": "d78dd3588a9c613b",
+        "type": "excel",
+        "z": "6ba2b50958515754",
+        "name": "datos",
+        "file": "/home/sensor/resultados.xlsx",
+        "x": 950,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5704fc75bdbe3fa",
+        "type": "sqlite",
+        "z": "6ba2b50958515754",
+        "mydb": "259c4b60fec55efd",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 890,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa57aa5ea5c8d9b8",
+        "type": "sqlite",
+        "z": "6ba2b50958515754",
+        "mydb": "259c4b60fec55efd",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 770,
+        "y": 400,
+        "wires": [
+            [
+                "d78dd3588a9c613b"
+            ]
+        ]
+    },
+    {
+        "id": "c67d0c910e186216",
+        "type": "ui_button",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "group": "029d84d024093d53",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Exportar",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 200,
+        "y": 560,
+        "wires": [
+            [
+                "751a391f62cb93f6"
+            ]
+        ]
+    },
+    {
+        "id": "ff49ce5884aefd01",
+        "type": "ui_button",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "group": "029d84d024093d53",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Borrar",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 210,
+        "y": 500,
+        "wires": [
+            [
+                "32d7819cb8a2955e"
+            ]
+        ]
+    },
+    {
+        "id": "0eb5dd1dd89e222e",
+        "type": "function",
+        "z": "6ba2b50958515754",
+        "name": "contador",
+        "func": "var sensor=msg.payload\nvar cont=flow.get('cont')||0;\n \nif (sensor==0){\n    cont+=1;\n    msg.payload=cont;\n   msg.topic=\"sensor\";\n    flow.set('cont',cont);\n    return msg;\n}else{\nreturn null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 300,
+        "wires": [
+            [
+                "93c3401723b3770c"
+            ]
+        ]
+    },
+    {
+        "id": "5d0bc9ab7d6eb6d8",
+        "type": "debug",
+        "z": "6ba2b50958515754",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "8ff9b06b3638e246",
+        "type": "ui_button",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "group": "029d84d024093d53",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Inicio",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 210,
+        "y": 440,
+        "wires": [
+            [
+                "0eb5dd1dd89e222e"
+            ]
+        ]
+    },
+    {
+        "id": "0f221275fdc06c6d",
+        "type": "ui_gauge",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "group": "fa53eaee84f9bd32",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Corriente",
+        "label": "[ A ]",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "300",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 280,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a17175264c9c0c62",
+        "type": "function",
+        "z": "6ba2b50958515754",
+        "name": "gauge corriente",
+        "func": "var Corriente=msg.payload.corriente;\n\nmsg.payload=Corriente;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "0f221275fdc06c6d"
+            ]
+        ]
+    },
+    {
+        "id": "f61050973a572728",
+        "type": "function",
+        "z": "6ba2b50958515754",
+        "name": "gauge voltaje",
+        "func": "var Voltaje=msg.payload.voltaje;\n\nmsg.payload=Voltaje;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 120,
+        "wires": [
+            [
+                "715a77dfef303e58"
+            ]
+        ]
+    },
+    {
+        "id": "715a77dfef303e58",
+        "type": "ui_gauge",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "group": "4341a5e2b31cdf9a",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Voltaje",
+        "label": "[ V ]",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "90",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 470,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "24f8cf92bfc800bc",
+        "type": "ui_gauge",
+        "z": "6ba2b50958515754",
+        "name": "",
+        "group": "941349cd81ec69e5",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Potencia",
+        "label": "[ W ]",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "27000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "725b5873c3f27a5f",
+        "type": "function",
+        "z": "6ba2b50958515754",
+        "name": "potencia",
+        "func": "var Corriente=msg.payload.corriente;\nvar Voltaje=msg.payload.voltaje;\nvar Potencia=0;\n\nPotencia=Corriente*Voltaje;\nmsg.payload=Potencia;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [
+                "24f8cf92bfc800bc"
+            ]
+        ]
+    }
+]
